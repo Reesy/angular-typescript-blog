@@ -33,9 +33,14 @@ body {
 }
 
 .form-control{
-	border-radius: 0;
+    float:center;
 }
-
+.pageContent{
+    text-align: center;
+}
 #blogFooter {
-	float:right;
+	  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
