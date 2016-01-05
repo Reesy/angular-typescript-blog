@@ -7,5 +7,5 @@ module Blog
 {
     angular.module('blog', [])
         .controller('blogController', Controller)
-        .directive('blogDirective', testDirective.factory());
+        .directive('testDirective', ['', testDirective]);
 }

@@ -6,5 +6,5 @@ var Blog;
 (function (Blog) {
     angular.module('blog', [])
         .controller('blogController', Blog.Controller)
-        .directive('blogDirective', Blog.testDirective.factory);
+        .directive('testDirective', ['', Blog.testDirective]);
 })(Blog || (Blog = {}));

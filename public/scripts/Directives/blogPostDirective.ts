@@ -3,22 +3,26 @@
 
 
 module Blog {
-    
+
    export class testDirective{
-        
-        public link: (scope:ng.IScope, element:ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
-        public template = '<p1> DIRECTIVE HELLO </p1>';
-        public scope = {};
-        
-        constructor($scope: IBlogScope){
-            testDirective.prototype.link = (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) =>
-            {
-                
-            }
-        }
-        
-        public static factory(){
-              return testDirective;      
+       
+      // public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
+    //   public template = "<div> Hello, World! </div>";
+    //   public scope = {};
+      
+        public static factory():ng.IDirective{
+            
+              return {
+                  restrict: 'AEC',
+                  replace: true,
+                  scope: {},
+                  link:     (scope: ng.IScope, element: ng.IAugmentedJQuery) =>
+                  {
+                    template: "<div> Hello, World! </div>";
+          
+                  }
+                  
+              }
         }
     }
     
