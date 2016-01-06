@@ -3,6 +3,7 @@
 module Blog {
     export interface IBlogScope {
            greetingText: string;
+           testTest: string;
     }   
 
     export class Controller {
