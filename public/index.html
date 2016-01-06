@@ -34,9 +34,11 @@
                 <label>Name:</label>
                 <input type="text" ng-model="yourName" placeholder="Enter a name here">
                 <hr>
+                  <div ng-view> <div>
+                   <test-Directive></test-Directive>
                 <div ng-controller="blogController">
                     <p> {{greetingText}} </p>
-                   <testDirective></testDirective>
+
                 </div>
                 <h1>Hello {{yourName}}!</h1>
                 <h1 id = "test"> </h1>
