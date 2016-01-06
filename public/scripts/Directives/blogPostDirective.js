@@ -3,19 +3,16 @@
 var Blog;
 (function (Blog) {
     var testDirective = (function () {
-        function testDirective() {
-        }
         // public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
         //   public template = "<div> Hello, World! </div>";
         //   public scope = {};
-        testDirective.factory = function () {
+        function testDirective() {
+            return testDirective.helloWorld();
+        }
+        testDirective.helloWorld = function () {
             return {
-                restrict: 'AEC',
-                replace: true,
-                scope: {},
-                link: function (scope, element) {
-                    template: "<div> Hello, World! </div>";
-                }
+                restrict: 'E',
+                template: 'Hello from the directive!'
             };
         };
         return testDirective;
