@@ -11,7 +11,7 @@ module Blog {
         private static helloWorld() : any{
             return {
                 restrict: 'E',
-                template: 'Hello from the directive!'
+                template: 'Hello, directive world'
                 
             }   
         }
