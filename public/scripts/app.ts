@@ -6,6 +6,6 @@
 module Blog
 {
     angular.module('blog', [])
-        .controller('blogController', Controller)
+        .controller('blogController', blogController)
         .directive('testDirective', () => new testDirective());
 }

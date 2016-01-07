@@ -5,6 +5,6 @@
 var Blog;
 (function (Blog) {
     angular.module('blog', [])
-        .controller('blogController', Blog.Controller)
+        .controller('blogController', Blog.blogController)
         .directive('testDirective', function () { return new Blog.testDirective(); });
 })(Blog || (Blog = {}));

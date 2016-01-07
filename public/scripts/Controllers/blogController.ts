@@ -3,13 +3,18 @@
 module Blog {
     export interface IBlogScope {
            greetingText: string;
-           testTest: string;
     }   
 
-    export class Controller {
-        constructor($scope: IBlogScope) {
-            $scope.greetingText = "Hello, Typescripty world!";
-        }   
-
+    export class blogController {
+        
+        constructor($scope: IBlogScope, $http) {
+            $scope.greetingText = "Hello, Typescripty world!";     
+        }
+        
+        OutsideFunction($scope: IBlogScope){
+            $scope.greetingText = "OutsideFunction called!";
+        }
+           
+        
     }
 }

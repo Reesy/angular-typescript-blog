@@ -2,11 +2,14 @@
 /// <reference path="../app.ts" />
 var Blog;
 (function (Blog) {
-    var Controller = (function () {
-        function Controller($scope) {
+    var blogController = (function () {
+        function blogController($scope, $http) {
             $scope.greetingText = "Hello, Typescripty world!";
         }
-        return Controller;
+        blogController.prototype.OutsideFunction = function ($scope) {
+            $scope.greetingText = "OutsideFunction called!";
+        };
+        return blogController;
     })();
-    Blog.Controller = Controller;
+    Blog.blogController = blogController;
 })(Blog || (Blog = {}));
