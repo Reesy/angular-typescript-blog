@@ -36,10 +36,10 @@
                 <hr>
                   <div ng-view> <div>
                  
-                <div ng-controller="blogController">
+                <div ng-controller="blogController as test">
                     <p> {{greetingText}} </p>
                     <test-Directive></test-Directive><!--must be nested inside blogController -->
-                    <a href="" ng-click = "OutsideFunction($scope)" >Click here to try to call OutsideFunction</a>
+                    <a href="" ng-click = "test.OutsideFunction()" >Click here to try to call OutsideFunction</a>
                 </div>
                 
                
