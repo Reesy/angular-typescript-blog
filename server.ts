@@ -43,12 +43,8 @@ var server = app.listen(8081, () =>
 
 router.route("/test")
        .get((req, res) => {
-             res.send("Hello!");
+             res.json("Hello!");
              console.log("Inside this!");
-             
-             
-             
-     
         
 });
 

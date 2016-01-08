@@ -25,7 +25,7 @@ module Blog {
         }
 
         callroute( ): void {
-            this.$http.get('test').success((req, res) => console.log(res)
+            this.$http.get('test').success((data) => console.log(data)
               
             );
         }

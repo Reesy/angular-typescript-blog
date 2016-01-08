@@ -16,7 +16,7 @@ var Blog;
             this.$scope.greetingText = "This can be found when using controller as!";
         };
         blogController.prototype.callroute = function () {
-            this.$http.get('test').success(function (req, res) { return console.log(res); });
+            this.$http.get('test').success(function (data) { return console.log(data); });
         };
         return blogController;
     })();

@@ -26,7 +26,7 @@ var server = app.listen(8081, function () {
 });
 router.route("/test")
     .get(function (req, res) {
-    res.send("Hello!");
+    res.json("Hello!");
     console.log("Inside this!");
 });
 app.use(function (req, res) {
