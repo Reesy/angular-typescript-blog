@@ -14,19 +14,20 @@ module Blog {
                
         constructor(public $scope: IBlogScope, public $http: ng.IHttpService) {
             $scope.OutsideFunction = this.OutsideFunction;
-            $scope.greetingText = "Hello, Typescripty world!";     
-            
-            
+            $scope.callroute = this.callroute;
+            $scope.greetingText = "Hello, Typescripty world!";
+                 
          //   this.OutsideFunction();
         }
         OutsideFunction(){
             console.log("found function!");
             this.$scope.greetingText = "This can be found when using controller as!";
         }
-        
-        CallRoute(){
-    
+
+        callroute( ): void {
+            this.$http.get('test').success((req, res) => console.log(res)
+              
+            );
         }
-        
     }
 }

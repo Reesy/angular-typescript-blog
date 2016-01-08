@@ -7,15 +7,16 @@ var Blog;
             this.$scope = $scope;
             this.$http = $http;
             $scope.OutsideFunction = this.OutsideFunction;
+            $scope.callroute = this.callroute;
             $scope.greetingText = "Hello, Typescripty world!";
-            $scope.update = this.update;
             //   this.OutsideFunction();
         }
         blogController.prototype.OutsideFunction = function () {
             console.log("found function!");
             this.$scope.greetingText = "This can be found when using controller as!";
         };
-        blogController.prototype.update = function () {
+        blogController.prototype.callroute = function () {
+            this.$http.get('test').success(function (req, res) { return console.log(res); });
         };
         return blogController;
     })();

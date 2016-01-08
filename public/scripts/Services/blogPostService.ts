@@ -2,6 +2,9 @@
 /// <reference path="../app.ts" />
 module Blog {
 
-
-    
+    export class  blogService {
+           
+        
+        
+    }
 }

@@ -4,7 +4,7 @@ import express = require("express");
 import bodyParser = require('body-parser');
 import mongoose = require('mongoose');
 var app = express();
-
+var router = express.Router();
 
 //connect to our database
 //Ideally you will obtain DB details from a config file
@@ -20,6 +20,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(bodyParser.urlencoded());
 //app.use('/api', blog); //This is our route middleware
 
+app.use('', router);
+
+router.use((req, res, next) => {
+
+  console.log(req.method, req.url);
+
+  next();
+
+});
 
 var server = app.listen(8081, () =>
 {
@@ -29,14 +38,24 @@ var server = app.listen(8081, () =>
     console.log("Reesy.net at http://localhost:%s", port)
 
 
+})
+
+
+router.route("/test")
+       .get((req, res) => {
+             res.send("Hello!");
+             console.log("Inside this!");
+             
+             
+             
+     
+        
 });
-
-
 
 app.use((req, res) =>
 {
   res.status(404).send('Sorry 404');
 
-})
+});
 
 export var App = app;
