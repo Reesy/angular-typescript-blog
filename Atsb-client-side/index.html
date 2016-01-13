@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app = "blog">
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> </script>
+    <link rel="stylesheet" href="css/homepage.css"> </script>
+    
+  </head>
+  <body>
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Blog</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                
+            </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+   
+      <div class="pagecontent">   
+            <div>
+                <label>Name:</label>
+                <input type="text" ng-model="yourName" placeholder="Enter a name here">
+                <hr>
+                  <div ng-view> <div>
+                 
+                <div ng-controller="blogController as test">
+                    <p> {{greetingText}} </p>
+                    <test-Directive></test-Directive><!--must be nested inside blogController -->
+                    <a href="" ng-click = "test.OutsideFunction()" >Click here to try to call OutsideFunction</a>
+                    <br>
+                    <a href="" ng-click = "test.callroute()" >Click here to try to call OutsideFunction</a>
+                </div>
+                
+               
+            </div>
+      </div>
+  
+    <!--JQuery is requires for bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javacript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script>
+    <!-- Angular and custom scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/Directives/blogPostDirective.js"></script>
+    <script type="text/javascript" src="scripts/Controllers/blogController.js"></script>
+    <script type="text/javascript" src="scripts/app.js"> </script>
+  </body>
+  
+</html>
