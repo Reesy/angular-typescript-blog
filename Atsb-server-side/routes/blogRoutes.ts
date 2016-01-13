@@ -16,9 +16,9 @@ router.use((req, res, next) => {
 
 router.route("/hello")
     .get((req, res) => {
-            res.json("hello!");
+           // res.json("hello!");
             console.log("inside constructor for blogRouter!");   
-            blogMnger.addAuthor();   
+            res.json(blogMnger.getPosts());
         
 });
 
