@@ -3,7 +3,7 @@
 module Blog {
     export interface IBlogScope {
            greetingText: string;
-           currentUrlText: string;
+           blogPost: string;
            OutsideFunction(): void;
            update(): void;
            callroute(): void;
@@ -22,12 +22,18 @@ module Blog {
         OutsideFunction(){
             console.log("found function!");
             this.$scope.greetingText = "This can be found when using controller as!";
+            
+            
         }
 
         callroute( ): void {
-            this.$http.get('test').success((data) => console.log(data)
-              
-            );
+            this.$http.get('hello').success((data) => 
+            {
+                var jsonTest = JSON.parse(<string> data);
+                console.log(data);  
+                console.log(jsonTest.blogPosts[0].content); 
+                this.$scope.greetingText = jsonTest.blogPosts[0].content;
+            });
         }
     }
 }
