@@ -11,3 +11,6 @@ tsc blogRoutes --module commonjs
 cd ../public/scripts
 echo "#######  compiling app.ts"
 tsc app --module commonjs
+cd ../../
+echo "Attempting to run server"
+node server
