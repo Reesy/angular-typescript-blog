@@ -1,5 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
 /// <reference path="routes/blogRoutes.ts" />
+/// <reference path="models/blogModel.ts" />
+/// <reference path="DataAccess/blogManager.ts" />
 
 import express = require("express");
 import bodyParser = require('body-parser');

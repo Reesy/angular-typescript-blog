@@ -1,5 +1,4 @@
 /// <reference path="../server.ts" />
-module Server {
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -12,4 +11,3 @@ var blogSchema = new Schema({
 });
 
 module.exports = mongoose.model('Blog', blogSchema);
-}

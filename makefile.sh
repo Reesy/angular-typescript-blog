@@ -9,6 +9,9 @@ tsc blogModel --module commonjs
 cd ../routes
 echo "routes"
 tsc blogRoutes --module commonjs
+echo "data-access"
+cd ../DataAccess
+tsc blogManager --module commonjs
 cd ../../Atsb-client-side/scripts
 echo "#######  compiling app.ts"
 tsc app --module commonjs
