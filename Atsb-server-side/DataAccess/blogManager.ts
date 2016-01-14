@@ -1,11 +1,18 @@
 /// <reference path = "../../typings/tsd.d.ts" />
 /// <reference path = "../server.ts" />
+import mongoose = require('mongoose');
 var blogSchema = require('../models/blogModel');
+
+//connect to our database
+//Ideally you will obtain DB details from a config file
 
 class blogManager{
     
     constructor(){
-        
+            var dbName: string = 'blogDB';
+            var connectionString: string = 'mongodb://localhost:27017/';
+            mongoose.connect(connectionString);
+           
     }
     
     //All of these methods will create calls to mongo after being formatted and tested

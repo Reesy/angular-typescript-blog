@@ -1,8 +1,15 @@
 /// <reference path = "../../typings/tsd.d.ts" />
 /// <reference path = "../server.ts" />
+var mongoose = require('mongoose');
 var blogSchema = require('../models/blogModel');
+//connect to our database
+//Ideally you will obtain DB details from a config file
 var blogManager = (function () {
     function blogManager() {
+        var dbName = 'blogDB';
+        var connectionString = 'mongodb://localhost:27017/';
+        mongoose.connect(connectionString);
+        console.log(mongoose);
     }
     //All of these methods will create calls to mongo after being formatted and tested
     //This will be used to save a post

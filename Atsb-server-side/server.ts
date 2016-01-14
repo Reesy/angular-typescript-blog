@@ -1,21 +1,15 @@
 /// <reference path="../typings/tsd.d.ts" />
-/// <reference path="routes/blogRoutes.ts" />
+/// <reference path="routes/routes.ts" />
 /// <reference path="models/blogModel.ts" />
 /// <reference path="DataAccess/blogManager.ts" />
 
 import express = require("express");
 import bodyParser = require('body-parser');
-import mongoose = require('mongoose');
-import routes = require('./routes/blogRoutes');
+import routes = require('./routes/routes');
 
 var app = express();
 var router = express.Router();
 
-//connect to our database
-//Ideally you will obtain DB details from a config file
-//var dbName: string = 'blogDB';
-var connectionString: string = 'mongodb://localhost:27017/';
-//mongoose.connect(connectionString);
 app.use(express.static('../Atsb-client-side'));
 //configure body-parser
 app.use(bodyParser.json());

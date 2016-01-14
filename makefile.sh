@@ -8,7 +8,7 @@ echo "models"
 tsc blogModel --module commonjs
 cd ../routes
 echo "routes"
-tsc blogRoutes --module commonjs
+tsc routes --module commonjs
 echo "data-access"
 cd ../DataAccess
 tsc blogManager --module commonjs

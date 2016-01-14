@@ -17,15 +17,16 @@ router.use((req, res, next) => {
 router.route("/hello")
     .get((req, res) => {
            // res.json("hello!");
-            console.log("inside constructor for blogRouter!");   
+            console.log("inside constructor for blogRouter!");   //Todo: Delete this console log
             res.json(blogMnger.getPosts());
         
 });
 
+//Todo: Delete this route
 router.route("/test")
     .get((req, res) => {
             res.json("test!");
-            console.log("Inside this!");        
+            console.log("Inside this!");         //Todo: Delete this console log
 });
 
 
