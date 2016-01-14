@@ -13,9 +13,7 @@ router.use(function (req, res, next) {
 });
 router.route("/hello")
     .get(function (req, res) {
-    // res.json("hello!");
-    console.log("inside constructor for blogRouter!"); //Todo: Delete this console log
-    res.json(blogManagerInstance.getPosts());
+    res.json(blogManagerInstance.getPosts(res));
 })
     .post(function (req, res) {
     blogManagerInstance.addContent(req);

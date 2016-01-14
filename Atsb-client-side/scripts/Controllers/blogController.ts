@@ -30,10 +30,7 @@ module Blog {
         callroute(): void {
             this.$http.get('hello').success((data) => 
             {
-                var jsonTest = JSON.parse(<string> data);
-                console.log(data);  
-                console.log(jsonTest.blogPosts[0].content); 
-                this.$scope.greetingText = jsonTest.blogPosts[0].content;
+                console.log(data);
             });
         }
         

@@ -16,9 +16,7 @@ router.use((req, res, next) => {
 
 router.route("/hello")
     .get((req, res) => {
-           // res.json("hello!");
-           console.log("inside constructor for blogRouter!");   //Todo: Delete this console log
-           res.json(blogManagerInstance.getPosts());
+           res.json(blogManagerInstance.getPosts(res));
     })
     .post((req, res) => {
            blogManagerInstance.addContent(req);   

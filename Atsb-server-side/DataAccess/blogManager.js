@@ -42,8 +42,17 @@ var blogManager = (function () {
         return null;
     };
     //this is temporary
-    blogManager.prototype.getPosts = function () {
-        return JSON.stringify(blogTemp);
+    blogManager.prototype.getPosts = function (res) {
+        var blogResponseToRouter = "Damn you Async";
+        blogSchema.find(function (err, blog) {
+            if (err) {
+                console.log("Error in getting posts");
+            }
+            console.log(blog);
+            blogResponseToRouter = blog;
+        });
+        return blogResponseToRouter;
+        // return JSON.stringify(blogTemp);
     };
     return blogManager;
 })();
