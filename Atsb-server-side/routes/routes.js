@@ -13,7 +13,7 @@ router.use(function (req, res, next) {
 });
 router.route("/hello")
     .get(function (req, res) {
-    res.json(blogManagerInstance.getPosts(res));
+    res.json(blogManagerInstance.getPosts(req));
 })
     .post(function (req, res) {
     blogManagerInstance.addContent(req);

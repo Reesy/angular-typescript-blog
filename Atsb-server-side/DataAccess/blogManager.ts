@@ -61,19 +61,24 @@ class blogManager{
         return null;
     }
     //this is temporary
-    public getPosts(res: any) : string {
-        var blogResponseToRouter = "Damn you Async";
-        blogSchema.find((err, blog) =>
+    public getPosts(res: any) : Promise<string> {
+
+        return new Promise((resolve, reject) =>
         {
-            if(err) {
-                console.log("Error in getting posts");
-            }
-            console.log(blog);
-            blogResponseToRouter = blog;
-        });
-        return blogResponseToRouter;    
-       // return JSON.stringify(blogTemp);
+                
+                var blogReturn = "Damn Async"
+                
+                blogSchema.find((err, blog) =>
+                {
+                      
+                        blogReturn = blog;
+                        Promise.resolve(blogReturn);
+                       
+                        
+                });
+        })
         
+       
     }
    
 }

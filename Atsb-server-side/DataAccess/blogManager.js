@@ -43,16 +43,13 @@ var blogManager = (function () {
     };
     //this is temporary
     blogManager.prototype.getPosts = function (res) {
-        var blogResponseToRouter = "Damn you Async";
-        blogSchema.find(function (err, blog) {
-            if (err) {
-                console.log("Error in getting posts");
-            }
-            console.log(blog);
-            blogResponseToRouter = blog;
+        return new Promise(function (resolve, reject) {
+            var blogReturn = "Damn Async";
+            blogSchema.find(function (err, blog) {
+                blogReturn = blog;
+                Promise.resolve(blogReturn);
+            });
         });
-        return blogResponseToRouter;
-        // return JSON.stringify(blogTemp);
     };
     return blogManager;
 })();

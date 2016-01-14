@@ -15,8 +15,8 @@ router.use((req, res, next) => {
 });
 
 router.route("/hello")
-    .get((req, res) => {
-           res.json(blogManagerInstance.getPosts(res));
+    .get((req, res) => { 
+           res.json(blogManagerInstance.getPosts(res)); //Todo: This may need to pass res;
     })
     .post((req, res) => {
            blogManagerInstance.addContent(req);   
