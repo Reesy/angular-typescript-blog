@@ -24,6 +24,14 @@ var Blog;
                 _this.$scope.greetingText = jsonTest.blogPosts[0].content;
             });
         };
+        blogController.prototype.postRoute = function () {
+            var blogPosts = {
+                "id": 1,
+                "title": "Server Number 1 blog post!",
+                "content": "Example content one"
+            };
+            this.$http.post('hello', blogPosts);
+        };
         return blogController;
     })();
     Blog.blogController = blogController;

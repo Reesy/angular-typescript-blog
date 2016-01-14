@@ -9,14 +9,20 @@ var blogManager = (function () {
         var dbName = 'blogDB';
         var connectionString = 'mongodb://localhost:27017/';
         mongoose.connect(connectionString);
-        console.log(mongoose);
     }
     //All of these methods will create calls to mongo after being formatted and tested
     //This will be used to save a post
     blogManager.prototype.addTitle = function () {
     };
-    blogManager.prototype.addContent = function () {
-        blogSchema.Find('blog');
+    blogManager.prototype.addContent = function (req) {
+        var blogConnection = new blogSchema(req.body);
+        blogConnection.save(function (err) {
+            if (err) {
+                console.log("Couldn't save!" + err);
+            }
+            console.log('Saved!');
+        });
+        console.log(req.body);
     };
     blogManager.prototype.addAuthor = function () {
         console.log("InsideAddaauthior");

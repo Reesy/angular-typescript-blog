@@ -21,9 +21,18 @@ class blogManager{
     public addTitle(){
         
     }
-    public addContent(){
+    public addContent(req: any){
+        var blogConnection = new blogSchema(req.body);
+        blogConnection.save((err) => 
+        {
+            if(err){
+                console.log("Couldn't save!" + err);
+            }
+            console.log('Saved!');
+        });
+        console.log(req.body);
         
-        blogSchema.Find('blog');
+        
     }
     
     public addAuthor(){

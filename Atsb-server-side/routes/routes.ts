@@ -2,10 +2,10 @@
 /// <reference path="../server.ts" />
 /// <reference path="../DataAccess/blogManager.ts" />
 import express = require("express");
-import blgManager = require("../DataAccess/blogManager");
+import blogManager = require("../DataAccess/blogManager");
 
 //var dataContext = new blogManager();
-var blogMnger = new blgManager();
+var blogManagerInstance = new blogManager();
 
 var router = express.Router();
 //This will print out the request to the console
@@ -17,10 +17,13 @@ router.use((req, res, next) => {
 router.route("/hello")
     .get((req, res) => {
            // res.json("hello!");
-            console.log("inside constructor for blogRouter!");   //Todo: Delete this console log
-            res.json(blogMnger.getPosts());
-        
-});
+           console.log("inside constructor for blogRouter!");   //Todo: Delete this console log
+           res.json(blogManagerInstance.getPosts());
+    })
+    .post((req, res) => {
+           blogManagerInstance.addContent(req);   
+    })
+;
 
 //Todo: Delete this route
 router.route("/test")

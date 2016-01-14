@@ -7,6 +7,7 @@ module Blog {
            OutsideFunction(): void;
            update(): void;
            callroute(): void;
+           postRoute(): void;
     }   
 
     export class blogController {
@@ -26,7 +27,7 @@ module Blog {
             
         }
 
-        callroute( ): void {
+        callroute(): void {
             this.$http.get('hello').success((data) => 
             {
                 var jsonTest = JSON.parse(<string> data);
@@ -35,5 +36,18 @@ module Blog {
                 this.$scope.greetingText = jsonTest.blogPosts[0].content;
             });
         }
+        
+        postRoute(): void {
+              var blogPosts = 
+                {
+                    "id":1,
+                    "title":"Server Number 1 blog post!",
+                    "content": "Example content one"
+                };
+              
+            this.$http.post('hello', blogPosts);
+            
+        }
+        
     }
 }
