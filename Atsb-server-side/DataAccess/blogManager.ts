@@ -60,25 +60,25 @@ class blogManager{
         
         return null;
     }
+    
+    public testString(): string{
+        
+        return "inside the testString function";
+    }
     //this is temporary
-    public getPosts(res: any) : Promise<string> {
-
+    public getPosts(res: any): Promise<any>{
         return new Promise((resolve, reject) =>
         {
-                
-                var blogReturn = "Damn Async"
-                
-                blogSchema.find((err, blog) =>
-                {
-                      
-                        blogReturn = blog;
-                        Promise.resolve(blogReturn);
-                       
-                        
-                });
+            var randomString = "£2323232";
+         //  randomString = this.testString();
+
+            blogSchema.find((err, blog) => {
+                randomString = blog;
+                return resolve(blog);
+            });
+          //  return resolve(randomString);
+            
         })
-        
-       
     }
    
 }

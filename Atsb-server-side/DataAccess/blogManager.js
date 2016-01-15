@@ -41,14 +41,19 @@ var blogManager = (function () {
     blogManager.prototype.getDate = function () {
         return null;
     };
+    blogManager.prototype.testString = function () {
+        return "inside the testString function";
+    };
     //this is temporary
     blogManager.prototype.getPosts = function (res) {
         return new Promise(function (resolve, reject) {
-            var blogReturn = "Damn Async";
+            var randomString = "£2323232";
+            //  randomString = this.testString();
             blogSchema.find(function (err, blog) {
-                blogReturn = blog;
-                Promise.resolve(blogReturn);
+                randomString = blog;
+                return resolve(blog);
             });
+            //  return resolve(randomString);
         });
     };
     return blogManager;
