@@ -13,16 +13,13 @@ router.use(function (req, res, next) {
 });
 router.route("/hello")
     .get(function (req, res) {
-    //  var responseFromClass = blogManagerInstance.getPosts("sds");
-    //   responseFromClass.then((promiseResult)=> res.json(promiseResult));
-    // var responseFromClass = new Promise((resolve, reject) => resolve(blogManagerInstance.getPosts("sd"))); //works
-    // responseFromClass.then((promiseResult) => res.json(promiseResult));
     console.log(typeof (blogManagerInstance.getPosts("sda")));
     blogManagerInstance.getPosts("sda").then(function (response) {
-        console.log("This should show me the string");
-        console.log(response);
+        //  console.log("This should show me the string");
+        // console.log(response);
+        res.json(response);
     });
-    res.json("blank");
+    // res.json("blank");
 })
     .post(function (req, res) {
     blogManagerInstance.addContent(req);

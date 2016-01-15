@@ -16,18 +16,9 @@ router.use((req, res, next) => {
 
 router.route("/hello")
     .get((req, res) => { 
-          
-          //  var responseFromClass = blogManagerInstance.getPosts("sds");
-         //   responseFromClass.then((promiseResult)=> res.json(promiseResult));
-          // var responseFromClass = new Promise((resolve, reject) => resolve(blogManagerInstance.getPosts("sd"))); //works
-          // responseFromClass.then((promiseResult) => res.json(promiseResult));
-          console.log(typeof(blogManagerInstance.getPosts("sda")));  
-          blogManagerInstance.getPosts("sda").then((response) => {
-              console.log("This should show me the string");
-              console.log(response);
-              
+          blogManagerInstance.getPosts().then((responseFromPromise) => {
+              res.json(responseFromPromise);
           })
-          res.json("blank");
     })
     .post((req, res) => {
            blogManagerInstance.addContent(req);   

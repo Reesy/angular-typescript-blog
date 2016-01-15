@@ -66,7 +66,7 @@ class blogManager{
         return "inside the testString function";
     }
     //this is temporary
-    public getPosts(res: any): Promise<any>{
+    public getPosts(): Promise<any>{
         return new Promise((resolve, reject) =>
         {
             var randomString = "£2323232";
