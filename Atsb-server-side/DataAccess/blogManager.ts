@@ -69,15 +69,9 @@ class blogManager{
     public getPosts(): Promise<any>{
         return new Promise((resolve, reject) =>
         {
-            var randomString = "£2323232";
-         //  randomString = this.testString();
-
             blogSchema.find((err, blog) => {
-                randomString = blog;
-                return resolve(blog);
+                 return resolve(blog);
             });
-          //  return resolve(randomString);
-            
         })
     }
    

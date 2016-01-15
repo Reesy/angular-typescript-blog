@@ -13,13 +13,9 @@ router.use(function (req, res, next) {
 });
 router.route("/hello")
     .get(function (req, res) {
-    console.log(typeof (blogManagerInstance.getPosts("sda")));
-    blogManagerInstance.getPosts("sda").then(function (response) {
-        //  console.log("This should show me the string");
-        // console.log(response);
-        res.json(response);
+    blogManagerInstance.getPosts().then(function (responseFromPromise) {
+        res.json(responseFromPromise);
     });
-    // res.json("blank");
 })
     .post(function (req, res) {
     blogManagerInstance.addContent(req);

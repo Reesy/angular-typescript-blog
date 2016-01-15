@@ -4,6 +4,7 @@ module Blog {
     export interface IBlogScope {
            greetingText: string;
            blogPost: string;
+           BlogPosts: any;
            OutsideFunction(): void;
            update(): void;
            callroute(): void;
@@ -30,7 +31,8 @@ module Blog {
         callroute(): void {
             this.$http.get('hello').success((data) => 
             {
-                console.log(data);
+               this.$scope.BlogPosts = data;
+               console.log(data);
             });
         }
         

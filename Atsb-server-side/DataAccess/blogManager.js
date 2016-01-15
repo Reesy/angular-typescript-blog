@@ -45,15 +45,11 @@ var blogManager = (function () {
         return "inside the testString function";
     };
     //this is temporary
-    blogManager.prototype.getPosts = function (res) {
+    blogManager.prototype.getPosts = function () {
         return new Promise(function (resolve, reject) {
-            var randomString = "£2323232";
-            //  randomString = this.testString();
             blogSchema.find(function (err, blog) {
-                randomString = blog;
                 return resolve(blog);
             });
-            //  return resolve(randomString);
         });
     };
     return blogManager;
