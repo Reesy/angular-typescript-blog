@@ -10,24 +10,15 @@ module Blog
         .directive('testDirective', () => new testDirective())
         .config(($stateProvider, $urlRouterProvider) =>{
             
-            $urlRouterProvider.otherwise("/home");
-           
+            $urlRouterProvider.otherwise("/Blog");
+        
             $stateProvider
-                
-              .state('home', {
-                  url: "/home",
-                  templateUrl: "template/BlogPanel.html"
-                  
-              })
-            
-            
               .state('BlogPanel', {
-                  url: "/BlgPnl",
+                  url: "/Blog",
                   templateUrl: "templates/BlogPanel.html"
-              })
-              
+              })         
               .state('BlogInputPanel', {
-                  url: "/BlgInput",
+                  url: "/BlogInput",
                   templateUrl: "templates/BlogInputPanel.html"
               })
             

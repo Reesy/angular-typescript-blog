@@ -4,7 +4,7 @@ module Blog {
 
     export class  blogService {
            
-        
+        //empty file for future use (possible with passport js for authentication)
         
     }
 }

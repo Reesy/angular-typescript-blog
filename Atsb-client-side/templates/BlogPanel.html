@@ -1,12 +1,5 @@
 <div ng-controller="blogController as blogContent">
-    <p> BLOG OUTPUT PANEl </p>
-    <test-Directive></test-Directive><!--must be nested inside blogController -->
-    <a href="" ng-click = "blogContent.OutsideFunction()" >Click here to try to call OutsideFunction</a>
-
-    <a href="" ng-click = "blogContent.callroute()" >Click here to try to call OutsideFunction</a>
-    <a href="" ng-click = "blogContent.postRoute()" >Click here to make a post to hello</a>
-
-    <div ng-repeat= "posts in BlogPosts | limitTo: ItemsPerPage" class = "blog-Div">
+    <div ng-repeat= "posts in BlogPosts | limitTo: ItemsPerPage" class = "blog-Div"> <!-- modify ItemsPerPage so it has an actual use -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">{{posts.title}}</h3>
@@ -16,4 +9,5 @@
             </div>
         </div>
     </div>
+     <a ui-sref="BlogInputPanel">Input</a>
 </div> <!--- blogController -->

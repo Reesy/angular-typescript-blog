@@ -4,11 +4,17 @@ var Blog;
 (function (Blog) {
     var blogController = (function () {
         function blogController($scope, $http) {
+            var _this = this;
             this.$scope = $scope;
             this.$http = $http;
             $scope.OutsideFunction = this.OutsideFunction;
             $scope.callroute = this.callroute;
             $scope.greetingText = "Hello, Typescripty world!";
+            //Initialises blog view content
+            this.$http.get('hello').success(function (data) {
+                _this.$scope.BlogPosts = data;
+                console.log(data);
+            });
             //   this.OutsideFunction();
         }
         blogController.prototype.OutsideFunction = function () {

@@ -8,18 +8,14 @@ var Blog;
         .controller('blogController', Blog.blogController)
         .directive('testDirective', function () { return new Blog.testDirective(); })
         .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/Blog");
         $stateProvider
-            .state('home', {
-            url: "/home",
-            templateUrl: "template/BlogPanel.html"
-        })
             .state('BlogPanel', {
-            url: "/BlgPnl",
+            url: "/Blog",
             templateUrl: "templates/BlogPanel.html"
         })
             .state('BlogInputPanel', {
-            url: "/BlgInput",
+            url: "/BlogInput",
             templateUrl: "templates/BlogInputPanel.html"
         });
     });

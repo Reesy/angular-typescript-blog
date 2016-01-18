@@ -18,6 +18,13 @@ module Blog {
             $scope.OutsideFunction = this.OutsideFunction;
             $scope.callroute = this.callroute;
             $scope.greetingText = "Hello, Typescripty world!";
+            //Initialises blog view content
+            this.$http.get('hello').success((data) => 
+            {
+               this.$scope.BlogPosts = data;
+               console.log(data);
+            });
+            
                  
          //   this.OutsideFunction();
         }
