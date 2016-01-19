@@ -4,16 +4,15 @@
 
 module Blog {
 
-   export class testDirective{
+   export class blogPostPaginateDirective{
         constructor(){
-            console.log("Entered directive constructor");
-            return testDirective.helloWorld();
+            return blogPostPaginateDirective.paginate();
         }
-        private static helloWorld() : any{
+        private static paginate() : any{
             return {
-                restrict: 'E',
+               restrict: 'E',
                 template: 'Hello, directive world + {{greetingText}}'
-                
+             //  template: "<p ng-repeat=5> Testttt </p>"
             }   
         }
     }

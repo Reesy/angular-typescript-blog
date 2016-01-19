@@ -4,6 +4,7 @@ var Blog;
 (function (Blog) {
     var testDirective = (function () {
         function testDirective() {
+            console.log("Entered directive constructor");
             return testDirective.helloWorld();
         }
         testDirective.helloWorld = function () {

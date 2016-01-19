@@ -22,6 +22,10 @@ module Blog {
             });
             
            // $scope.requestBlogData();
+           
+            //requires number of unique blog posts in database / number of blog posts to be shown per page
+            
+            
         }
         requestBlogData(): void {
             this.$http.get('blogRoute').success((data) => 

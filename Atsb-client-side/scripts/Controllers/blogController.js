@@ -16,6 +16,7 @@ var Blog;
                 console.log(data);
             });
             // $scope.requestBlogData();
+            //requires number of unique blog posts in database / number of blog posts to be shown per page
         }
         blogController.prototype.requestBlogData = function () {
             var _this = this;
