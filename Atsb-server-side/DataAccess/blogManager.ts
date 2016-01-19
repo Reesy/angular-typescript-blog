@@ -14,7 +14,7 @@ class blogManager{
             mongoose.connect(connectionString);
     }
     //All of these methods will create calls to mongo after being formatted and tested
-    //This will be used to save a post
+    //This will be used to save a post, This takes in data from client side being routed through router (.get preferably)
     public addContent(req: any){
         var blogConnection = new blogSchema(req.body);
         blogConnection.save((err) => 
@@ -26,10 +26,8 @@ class blogManager{
         });
       
     }
-    public testString(): string{
-        return "inside the testString function";
-    }
-    //this is temporary
+    //This serves up every post in the database (Ok for very samll dataset, terrible for any real uss) - Mostly used for a quick test to dump
+    //the database
     public getAllPosts(): Promise<any>{
         return new Promise((resolve, reject) =>
         {
@@ -38,7 +36,8 @@ class blogManager{
             });
         })
     }
-    
+    //This method will return a set number of blog posts, starting from the 'firstPostIndex' to 'numberOfPosts' in increasing order
+    //based on the time of submission.
     public getSomePosts(firstPostIndex: number, numberOfPosts: number): Promise<any>{
         
         return new Promise((resolve, reject) => 

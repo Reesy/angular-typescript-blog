@@ -3,48 +3,37 @@
 module Blog {
     export interface IBlogScope {
            greetingText: string;
-           blogPost: string;
            BlogPosts: any;
-           OutsideFunction(): void;
-           update(): void;
-           callroute(): void;
-           postRoute(): void;
+           requestBlogData(): void;
            submitFormSata(): void;
     }   
 
     export class blogController {
      
         constructor(public $scope: IBlogScope, public $http: ng.IHttpService) {
-            $scope.OutsideFunction = this.OutsideFunction;
-            $scope.callroute = this.callroute;
+            $scope.requestBlogData = this.requestBlogData;
             $scope.greetingText = "Hello, Typescripty world!";
             //Initialises blog view content
-            this.$http.get('hello').success((data) => 
+            //ToDo: Change this initialiser to just get the x number of newest posts.
+            this.$http.get('blogRoute').success((data) => 
             {
                this.$scope.BlogPosts = data;
                console.log(data);
             });
             
-                 
-         //   this.OutsideFunction();
+           // $scope.requestBlogData();
         }
-        OutsideFunction(){
-            console.log("found function!");
-            this.$scope.greetingText = "This can be found when using controller as!";
-            
-            
-        }
-
-        callroute(): void {
-            this.$http.get('hello').success((data) => 
+        requestBlogData(): void {
+            this.$http.get('blogRoute').success((data) => 
             {
                this.$scope.BlogPosts = data;
                console.log(data);
             });
         }
         
+        //This submits the form data to the server side to handle
         submitFormData(formData): void {
-            this.$http.post('hello', formData);
+            this.$http.post('blogRoute', formData);
         }
     }
 }

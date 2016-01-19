@@ -11,7 +11,9 @@ router.use(function (req, res, next) {
     console.log(req.method, req.url);
     next();
 });
-router.route("/hello")
+//This is the primary route for the blog, All calls from client side that use HTTP 
+//methods on the path 'blogRoute' will come through this router.
+router.route("/blogRoute")
     .get(function (req, res) {
     blogManagerInstance.getAllPosts().then(function (responseFromPromise) {
         res.json(responseFromPromise);
@@ -19,11 +21,5 @@ router.route("/hello")
 })
     .post(function (req, res) {
     blogManagerInstance.addContent(req);
-});
-//Todo: Delete this route
-router.route("/test")
-    .get(function (req, res) {
-    res.json("test!");
-    console.log("Inside this!"); //Todo: Delete this console log
 });
 module.exports = router;

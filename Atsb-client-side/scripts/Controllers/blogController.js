@@ -7,29 +7,26 @@ var Blog;
             var _this = this;
             this.$scope = $scope;
             this.$http = $http;
-            $scope.OutsideFunction = this.OutsideFunction;
-            $scope.callroute = this.callroute;
+            $scope.requestBlogData = this.requestBlogData;
             $scope.greetingText = "Hello, Typescripty world!";
             //Initialises blog view content
-            this.$http.get('hello').success(function (data) {
+            //ToDo: Change this initialiser to just get the x number of newest posts.
+            this.$http.get('blogRoute').success(function (data) {
                 _this.$scope.BlogPosts = data;
                 console.log(data);
             });
-            //   this.OutsideFunction();
+            // $scope.requestBlogData();
         }
-        blogController.prototype.OutsideFunction = function () {
-            console.log("found function!");
-            this.$scope.greetingText = "This can be found when using controller as!";
-        };
-        blogController.prototype.callroute = function () {
+        blogController.prototype.requestBlogData = function () {
             var _this = this;
-            this.$http.get('hello').success(function (data) {
+            this.$http.get('blogRoute').success(function (data) {
                 _this.$scope.BlogPosts = data;
                 console.log(data);
             });
         };
+        //This submits the form data to the server side to handle
         blogController.prototype.submitFormData = function (formData) {
-            this.$http.post('hello', formData);
+            this.$http.post('blogRoute', formData);
         };
         return blogController;
     })();
