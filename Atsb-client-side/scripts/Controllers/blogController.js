@@ -28,13 +28,8 @@ var Blog;
                 console.log(data);
             });
         };
-        blogController.prototype.postRoute = function () {
-            var blogPosts = {
-                "id": 1,
-                "title": "Server Number 1 blog post!",
-                "content": "Example content one"
-            };
-            this.$http.post('hello', blogPosts);
+        blogController.prototype.submitFormData = function (formData) {
+            this.$http.post('hello', formData);
         };
         return blogController;
     })();

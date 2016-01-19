@@ -9,11 +9,11 @@ module Blog {
            update(): void;
            callroute(): void;
            postRoute(): void;
+           submitFormSata(): void;
     }   
 
     export class blogController {
-   
-               
+     
         constructor(public $scope: IBlogScope, public $http: ng.IHttpService) {
             $scope.OutsideFunction = this.OutsideFunction;
             $scope.callroute = this.callroute;
@@ -43,17 +43,8 @@ module Blog {
             });
         }
         
-        postRoute(): void {
-              var blogPosts = 
-                {
-                    "id":1,
-                    "title":"Server Number 1 blog post!",
-                    "content": "Example content one"
-                };
-              
-            this.$http.post('hello', blogPosts);
-            
+        submitFormData(formData): void {
+            this.$http.post('hello', formData);
         }
-        
     }
 }

@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 
 router.route("/hello")
     .get((req, res) => { 
-          blogManagerInstance.getPosts().then((responseFromPromise) => {
+          blogManagerInstance.getAllPosts().then((responseFromPromise) => {
               res.json(responseFromPromise);
           })
     })
