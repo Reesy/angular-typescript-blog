@@ -1,17 +1,20 @@
 #!/bin/bash
-echo "#######  compiling server files:"
-echo "server"
+echo "#######  Running through:"
+echo "Server compilation"
 cd Atsb-server-side
 tsc server --module commonjs
 cd ./models
-echo "models"
+echo "Models compilation"
 tsc blogModel --module commonjs
 cd ../routes
-echo "routes"
+echo "Routes compilation"
 tsc routes --module commonjs
-echo "data-access"
+echo "DataAccess compilation"
 cd ../DataAccess
 tsc blogManager --module commonjs
+echo "DataAccess test"
+cd ../DataAccess
+mocha
 cd ../../Atsb-client-side/scripts
 echo "#######  compiling app.ts"
 tsc app --module commonjs
